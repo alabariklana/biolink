@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pisang Ijo Evi 🍌</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9fafb;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+
+    .container {
+      text-align: center;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 2rem;
+      width: 90%;
+      max-width: 400px;
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+    }
+
+    img.logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 0.2rem;
+      color: #1a1a1a;
+    }
+
+    p.subtitle {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+    .socials{display:flex;gap:10px;justify-content:center;margin-top:14px}
+    .socials a{font-size:14px;color:var(--muted);text-decoration:none}
+
+    .meta{margin-top:16px;color:var(--muted);font-size:13px}
+    .small{font-size:12px;color:#9b9b9b;margin-top:10px}
+    .banana-accent{position:fixed;right:16px;bottom:16px;width:72px;opacity:0.85;transform:rotate(-12deg)}
+    .banana-accent img{width:100%;height:auto;display:block}
+
+    .links button {
+      width: 100%;
+      background: #3ba55c;
+      color: white;
+      border: none;
+      padding: 0.9rem 1.2rem;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .links button:hover {
+      background: #2f8c4a;
+      transform: scale(1.02);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .links button:active {
+      transform: scale(0.97);
+      background: #26733e;
+    }
+
+    .links button::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.5s ease, height 0.5s ease, opacity 1s ease;
+      opacity: 0;
+    }
+
+    .links button.clicked::after {
+      width: 200%;
+      height: 200%;
+      opacity: 0;
+    }
+
+    footer {
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="images/logo.png" alt="Pisang Ijo Evi" class="logo" />
+    <h1>Pisang Ijo Evi</h1>
+   <p class="lead">Manisnya tradisi, untuk setiap kebersamaan. 🍌<br><strong>Rasa jujur • Santan pas • Legit alami</strong></p>
+
+    <div class="links">
+      <button onclick="openLink('https://wa.me/6282260289787')">📦 Pre-order via WhatsApp</button>
+      <button onclick="openLink('https://www.instagram.com/pisangijoevi')">📸 Instagram</button>
+      <button onclick="openLink('https://menu-pisangijo.com')">📋 Lihat Menu</button>
+      <button onclick="openLink('https://tokopedia.com/pisangijoevi')">🎁 Hampers & Gift Box</button>
+    </div>
+<div class="socials" style="margin-top:18px">
+        <a href="mailto:pisangijoevi@email.com">✉️ Kontak</a>
+        <span style="opacity:0.6">•</span>
+        <a href="tel:+62812xxxxxxx">📞 +62 822-6028-9787</a>
+      </div>
+
+      <div class="meta">
+        <div id="menu" style="margin-top:16px;text-align:left">
+          <strong>Menu singkat</strong>
+          <ul style="padding-left:18px;margin:6px 0;color:var(--muted)">
+            <li>Pisang Ijo Ori — ready to eat</li>
+            <li>Frozen Pisang Ijo — Ready to heat</li>
+          </ul>
+        </div>
+
+        <div id="hampers" style="margin-top:6px;text-align:left">
+          <strong>Hampers & Oleh-oleh</strong>
+          <p style="margin:6px 0;color:var(--muted);">Kami menyediakan kemasan eksklusif untuk oleh-oleh dan hampers korporat. Hubungi kami untuk penawaran khusus.</p>
+        </div>
+
+        <div class="small">Lokasi: Banta-Bantaeng, Makassar • Melayani pre-order & pengiriman lokal</div>
+      </div>
+
+    </div>
+     <div class="banana-accent" aria-hidden="true">
+      <img src="images/logosmall.png" alt="" onerror="this.style.display='none'"/>
+    </div>
+  </div>
+
+  <script>
+    function openLink(url) {
+      const activeButton = event.currentTarget;
+      activeButton.classList.add('clicked');
+      setTimeout(() => {
+        activeButton.classList.remove('clicked');
+        window.open(url, '_blank');
+      }, 300);
+    }
+  </script>
+</body>
+</html>
