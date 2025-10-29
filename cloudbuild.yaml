@@ -1,0 +1,15 @@
+steps:
+  # Step 1: Hapus isi bucket lama
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        gsutil -m rm -r gs://pisangijo-web/** || true
+
+  # Step 2: Upload semua file website dari repo ke bucket
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    args:
+      - '-c'
+      - |
+        gsutil -m rsync -r -c -d . gs://pisangijo-web
