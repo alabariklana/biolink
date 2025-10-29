@@ -1,15 +1,6 @@
 steps:
-  # Step 1: Hapus isi bucket lama
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: 'bash'
-    args:
-      - '-c'
-      - |
-        gsutil -m rm -r gs://biolink_pisjo/** || true
+  - name: gcr.io/cloud-builders/gsutil
+    args: ["-m", "rsync", "-r", "-c", "-d", "./", "gs://biolink_pisjo"]
 
-  # Step 2: Upload semua file website dari repo ke bucket
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    args:
-      - '-c'
-      - |
-        gsutil -m rsync -r -c -d . gs://biolink_pisjo
+options:
+  logging: CLOUD_LOGGING_ONLY
