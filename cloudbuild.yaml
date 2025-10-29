@@ -5,7 +5,7 @@ steps:
     args:
       - '-c'
       - |
-        gsutil -m rm -r gs://pisangijo-web/** || true
+        gsutil -m rm -r gs://biolink_pisjo/** || true
 
   # Step 2: Upload semua file website dari repo ke bucket
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
