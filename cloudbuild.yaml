@@ -12,4 +12,4 @@ steps:
     args:
       - '-c'
       - |
-        gsutil -m rsync -r -c -d . gs://pisangijo-web
+        gsutil -m rsync -r -c -d . gs://biolink_pisjo
